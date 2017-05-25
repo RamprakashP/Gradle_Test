@@ -1,0 +1,20 @@
+// Apply the java plugin to add support for Java
+apply plugin: 'java'
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+    maven{
+    	url "http://repo.maven.apache.org/maven2"
+    }
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.21'
+
+    testCompile 'junit:junit:4.12'
+    compile 'org.mockito:mockito-all:1.10.19'
+}
+
+task wrapper(type: Wrapper){
+	gradleVersion = '2.0'
+}
